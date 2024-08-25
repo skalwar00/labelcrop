@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Crop Tool</title>
+</head>
+<body>
+    <h1>Upload PDF to Crop</h1>
+    <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="application/pdf" id="fileInput">
+        <input type="submit" value="Upload and Crop">
+    </form>
+    <script>
+        document.getElementById('uploadForm').onsubmit = function() {
+            // Clear the file input after form submission
+            setTimeout(function() {
+                document.getElementById('fileInput').value = "";
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
